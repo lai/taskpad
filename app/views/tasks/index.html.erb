@@ -1,0 +1,23 @@
+<h1>Task Pad</h1>
+
+<%= render 'form' %>
+<div class="small-divider"></div>
+
+<ul id="task_type_tabs">
+    <li class="active"><%= link_to "Current", tasks_path, :remote => true, :id => "current_tasks_tab" %></li>
+    <li><%= link_to "Completed", index_completed_tasks_path, :remote => true, :id => "completed_tasks_tab" %></li>
+</ul>
+
+<div id="task_sort_tabs">
+        Sort by <%= link_to "Date Added", sort_by_date_added_tasks_path, :remote => true, :id => "sort_by_date_added_tasks_tab" %>
+        | <%= link_to "Due", sort_by_due_tasks_path, :remote => true, :id => "sort_by_due_tasks_tab" %>
+</div>
+<%# Sort by Label  %>
+<div class="clear"></div>
+
+<div id="current_tasks" class="tasks">
+  <%= render @current_tasks %>
+</div>
+<div id="completed_tasks" class="tasks">
+
+</div>

@@ -1,0 +1,9 @@
+$('#task_type_tabs').find('> .active').removeClass('active');
+$('#current_tasks_tab').parent('li').addClass('active');
+
+
+
+$('#completed_tasks').fadeOut(200, function(){
+    $('#current_tasks').html("<%= escape_javascript(render @current_tasks) %>");
+    $('#current_tasks').fadeIn(200);
+});

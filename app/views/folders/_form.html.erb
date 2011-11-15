@@ -1,0 +1,11 @@
+<%= form_for @folder, :remote => true do |f| %>
+
+
+<div class="field">
+
+    <%= f.text_field :name, :placeholder => "Label Name", :validation => "required" %>
+</div>
+
+<%= f.submit "Add Label", :id => "add_folder_button" %>
+<div class="clear"></div>
+<% end %>

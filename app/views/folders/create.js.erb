@@ -1,0 +1,6 @@
+console.log("label created.");
+
+$("#new_folder").before("<%= escape_javascript(render @folder ) %>");
+$("#new_folder")[0].reset();
+
+$("#task_folder_id").append('<option value="<%= @folder.id %>"><%= @folder.name %></option>');

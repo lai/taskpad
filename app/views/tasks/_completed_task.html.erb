@@ -1,0 +1,23 @@
+<%= div_for task do %>
+    <% if !(task.folder.nil?) %>
+    <span class="task_folder_name"><%= task.folder.name %></span> 
+    <% end %>
+  <span class="task_name"><%= task.name %></span>
+  
+  <div class="task_info">
+      <div class="task_due">
+      
+
+              <span><%= task.due.strftime("%b %d") %></span>
+
+      
+           
+   
+       </div>
+       <div class="options">
+         <%= link_to image_tag('/assets/trash16.png', :alt => 'Delete'), task_path(task), :method => :delete, :remote => true, :class => "delete_task" %>
+         
+       </div>
+   </div>
+   <div class="clear"></div>
+<% end %>

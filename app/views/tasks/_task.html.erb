@@ -1,0 +1,32 @@
+<%= div_for task do %>
+
+    <% if !(task.folder.nil?) %>
+    <span class="task_folder_name"><%= task.folder.name %></span> 
+    <% end %>
+  <span class="task_name"><%= task.name %></span>
+  
+  <div class="task_info">
+      <div class="task_due">
+      
+          <% if task.due.future? %>
+            <% if ((task.due - Date.today) > 7) %>
+              <span><%= task.due.strftime("%b %d") %></span>
+            <% else %>
+              <span><%= pluralize((task.due - Date.today).to_i, 'day') %> left</span> 
+            <% end %>
+          <% elsif task.due.today? %>
+            <span>due today</span>
+          <% else %>
+            <span><%= pluralize((Date.today - task.due).to_i, 'day') %> overdue</span>
+          <% end %>
+      
+           
+   
+       </div>
+       <div class="options">
+         <%= link_to image_tag('/assets/trash16.png', :alt => 'Delete'), task_path(task), :method => :delete, :remote => true, :class => "delete_task" %>
+         <%= link_to image_tag('/assets/check16.png', :alt => 'Complete'), complete_task_path(task), :method => :put, :remote => true, :class => "complete_task" %>
+       </div>
+   </div>
+   <div class="clear"></div>
+<% end %>

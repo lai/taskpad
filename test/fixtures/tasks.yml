@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  folder_id: 1
+  name: MyString
+  due: 2011-10-20
+
+two:
+  folder_id: 1
+  name: MyString
+  due: 2011-10-20

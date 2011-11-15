@@ -1,0 +1,10 @@
+// alert("hello world");
+// 
+$('#manage_folders_modal').bind('show', function () {
+    $('#manage_folders_modal').find('> .modal-body')
+    .html("<%= escape_javascript(render @folders) %> <%= escape_javascript(render 'form') %>");
+    
+});
+$('#manage_folders_modal').modal('show');
+
+

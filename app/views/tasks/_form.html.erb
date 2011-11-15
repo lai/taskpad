@@ -1,0 +1,19 @@
+<%= form_for @task, :remote => true do |f| %>
+
+
+
+<div class="field">
+  <%= collection_select(:task, :folder_id, Folder.all, :id, :name, :prompt => "Select a label") %>
+</div>
+
+<div class="field">
+
+    <%= f.text_field :name, :placeholder => "Task Name", :validation => "required" %>
+</div>
+<div class="field">
+
+    <%= f.text_field :due, :placeholder => "Due Date", :validation => "required date" %>
+</div>
+<%= f.submit "Add Task", :id => "add_task_button" %>
+<div class="clear"></div>
+<% end %>

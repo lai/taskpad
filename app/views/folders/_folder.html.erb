@@ -1,0 +1,7 @@
+<%= div_for folder do %>
+    <span class="folder_name"><%= folder.name %></span> 
+    <span class="folder_actions">
+    <%= link_to 'Delete', folder_path(folder), :method => :delete, :remote => true, :class => "delete_folder" %>
+    </span> 
+    <div class="clear"></div>
+<% end %>

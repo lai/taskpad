@@ -1,0 +1,17 @@
+$('#task_type_tabs').find('> .active').removeClass('active');
+$('#completed_tasks_tab').parent('li').addClass('active');
+
+// var $container = $('#container');
+// $container.css('height', $container.height() );
+
+$('#current_tasks').fadeOut(200, function(){
+        
+    $('#completed_tasks').html("<%= escape_javascript(
+        render :partial => 'completed_task', :collection => @completed_tasks, :as => :task) %>");
+       
+    $('#completed_tasks').fadeIn(200);
+    
+    // var newheight = $('#completed_tasks', $container).height();
+    // $container.animate( {height: newheight} );
+    // $container.css('height', newheight );
+});

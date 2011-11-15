@@ -10,6 +10,8 @@ gem 'pg', '0.11.0'
 
 gem 'thin'
 
+gem 'therubyracer', '~> 0.9.9'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

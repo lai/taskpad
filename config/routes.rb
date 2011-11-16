@@ -6,7 +6,7 @@ Tasks::Application.routes.draw do
       put 'complete'
     end
     collection do
-      get 'index_completed'
+      get 'completed'
       get 'sort_by_due'
       get 'sort_by_date_added'
     end

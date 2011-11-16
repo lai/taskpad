@@ -14,7 +14,7 @@ class TasksController < ApplicationController
     end
   end
   
-  def index_completed
+  def completed
     # @tasks => not completed
     @completed_tasks = Task.where(:is_completed => true)
     #@task = Task.new() # still needed for the form
